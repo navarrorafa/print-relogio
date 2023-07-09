@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relogio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #printHorario {
+            font-size: 3rem;
+            font-weight: bolder;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #printData {
+            font-size: 1.3rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="printHorario"></p>
+    <p id="printData"></p>
+
+
+    <script>
+        let printHorario = document.querySelector("#printHorario");
+        let printData = document.querySelector("#printData");
+
+
+        const mostrarHora = () => {
+            const dataAtual = new Date();
+            const hora = dataAtual.toLocaleTimeString();
+            const data = dataAtual.toLocaleDateString();
+            printHorario.innerHTML = hora;
+            printData.innerHTML = data;
+            
+        };
+
+       
+
+
+        mostrarHora();
+        setInterval(mostrarHora, 1000);
+
+
+
+
+    </script>
+</body>
+
+</html>
